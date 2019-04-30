@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vinograd <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/04/30 15:32:09 by vinograd          #+#    #+#             */
+/*   Updated: 2019/04/30 16:19:25 by vinograd         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 
-void itoa2(char *str, int nbr)
+void	itoa2(char *str, int nbr)
 {
 	int index;
 	int sing;
@@ -20,7 +32,7 @@ void itoa2(char *str, int nbr)
 	str[++index] = '\0';
 }
 
-char *itoa(int nbr)
+char	*ft_itoa(int nbr)
 {
 	char *str;
 

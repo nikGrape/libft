@@ -1,3 +1,8 @@
+includes/includes.h
 .gitignore
+.DS_Store
+._.DS_Store
 srcs/a.out
 srcs/main.c
+._libft.txt
+srcs/.main.c.swp

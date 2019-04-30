@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: exam <marvin@42.fr>                        +#+  +:+       +#+        */
+/*   By: vinograd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/19 12:27:22 by exam              #+#    #+#             */
-/*   Updated: 2019/04/19 14:14:44 by exam             ###   ########.fr       */
+/*   Created: 2019/04/30 14:26:17 by vinograd          #+#    #+#             */
+/*   Updated: 2019/04/30 16:35:35 by vinograd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int	word_counter(char *str)
+int		word_counter(char *str)
 {
 	int i;
 	int words;
@@ -20,22 +20,23 @@ int	word_counter(char *str)
 	words = 0;
 	i = 0;
 	while (str[i])
-	{ 
-		while((str[i] == ' ' || str[i] == '\t') && str[i] != '\0')
+	{
+		while ((str[i] == ' ' || str[i] == '\t') && str[i] != '\0')
 			i++;
 		if (str[i])
 			words++;
-		while((str[i] != ' ' && str[i] != '\t') && str[i] != '\0')
+		while ((str[i] != ' ' && str[i] != '\t') && str[i] != '\0')
 			i++;
 	}
 	return (words);
 }
+
 char	**memory_giver(char *str, int size)
 {
-	char 	**res;
-	int	letters;
-	int	i;
-	int	j;
+	char	**res;
+	int		letters;
+	int		i;
+	int		j;
 
 	res = (char **)malloc(sizeof(char*) * size);
 	i = 0;
@@ -45,7 +46,8 @@ char	**memory_giver(char *str, int size)
 		letters = 0;
 		while ((str[i] == ' ' || str[i] == '\t' || str[i] == '\n') && str[i])
 			i++;
-		while (str[i] != ' ' && str[i] != '\t' && str[i] != '\n' && str[i] != '\0')
+		while (str[i] != ' ' && str[i] != '\t' &&
+				str[i] != '\n' && str[i] != '\0')
 		{
 			letters++;
 			i++;
@@ -57,14 +59,13 @@ char	**memory_giver(char *str, int size)
 	return (res);
 }
 
-	
-char    **ft_split(char *str)
+char	**ft_strsplit(char *str)
 {
 	char	**res;
-	int	i;
-	int	j;
-	int	str_number;
-	int	size;
+	int		i;
+	int		j;
+	int		str_number;
+	int		size;
 
 	size = word_counter(str);
 	res = memory_giver(str, size);
@@ -78,11 +79,7 @@ char    **ft_split(char *str)
 		while ((str[i] == ' ' || str[i] == '\t' || str[i] == '\n') && str[i])
 			i++;
 		while (str[i] != ' ' && str[i] != '\t' && str[i] != '\n' && str[i])
-		{
-			res[str_number][j] = str[i];
-			i++;
-			j++;
-		}
+			res[str_number][j++] = str[i++];
 		res[str_number][j] = '\0';
 		str_number++;
 	}
