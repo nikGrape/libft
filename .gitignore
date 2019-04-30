@@ -1,1 +1,3 @@
+.gitignore
 srcs/a.out
+srcs/main.c
