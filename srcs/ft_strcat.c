@@ -6,15 +6,15 @@
 /*   By: vinograd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/30 15:33:23 by vinograd          #+#    #+#             */
-/*   Updated: 2019/04/30 15:33:28 by vinograd         ###   ########.fr       */
+/*   Updated: 2019/04/30 17:49:52 by vinograd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_strcat(char *str1, char *str2)
 {
-	while(*str1)
+	while (*str1)
 		str1++;
-	while(*str2)
+	while (*str2)
 	{
 		*str1 = *str2;
 		str1++;

@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vinograd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/29 17:07:50 by vinograd          #+#    #+#             */
-/*   Updated: 2019/04/30 20:22:58 by vinograd         ###   ########.fr       */
+/*   Created: 2019/04/02 12:53:30 by vinograd          #+#    #+#             */
+/*   Updated: 2019/04/02 19:23:00 by vinograd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-
-void	ft_bzero(void *s, size_t n)
+char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	int		i;
-	char	*str;
+	unsigned int	i;
 
-	str = s;
 	i = 0;
+	while (src[i] != '\0' && i < n)
+	{
+		dest[i] = src[i];
+		++i;
+	}
 	while (i < n)
 	{
-		str[i] = 0;
+		dest[i] = '\0';
 		i++;
 	}
+	return (dest);
 }

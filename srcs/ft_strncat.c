@@ -6,13 +6,14 @@
 /*   By: vinograd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/30 15:33:55 by vinograd          #+#    #+#             */
-/*   Updated: 2019/04/30 15:33:59 by vinograd         ###   ########.fr       */
+/*   Updated: 2019/04/30 17:54:07 by vinograd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_strncat(char *str1, char*str2, int n)
+void	ft_strncat(char *str1, char *str2, int n)
 {
-	int i;
+	int		i;
+
 	while (*str1 != '\0' && *str1 != '\n')
 		str1++;
 	i = 0;
