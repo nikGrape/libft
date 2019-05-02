@@ -6,9 +6,11 @@
 /*   By: vinograd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/30 21:04:22 by vinograd          #+#    #+#             */
-/*   Updated: 2019/04/30 21:06:57 by vinograd         ###   ########.fr       */
+/*   Updated: 2019/05/01 17:36:18 by vinograd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stddef.h>
 
 char	*strnstr(const char *haystack, const char *needle, size_t len)
 {

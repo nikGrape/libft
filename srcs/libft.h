@@ -6,19 +6,19 @@
 /*   By: vinograd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/30 15:19:48 by vinograd          #+#    #+#             */
-/*   Updated: 2019/04/30 21:07:34 by vinograd         ###   ########.fr       */
+/*   Updated: 2019/05/02 01:04:03 by vinograd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT
-#define LIBFT
-#include <unistd.h>
-#include <stdio.h>
-#include <stdlib.h>
+#ifndef LIBFT_H
+# define LIBFT_H
+# include <unistd.h>
+# include <stdio.h>
+# include <stdlib.h>
 
-int		ft_atoi(char *s);
+char	**ft_strsplit(char const *str, char c);
+int		ft_atoi(const char *s);
 void	ft_bzero(void *s, size_t n);
-void	itoa2(char *str, int nbr);
 char	*ft_itoa(int nbr);
 void	ft_putchar(char c);
 void	ft_putnbr(int n);

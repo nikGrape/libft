@@ -6,7 +6,7 @@
 /*   By: vinograd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/12 14:39:44 by vinograd          #+#    #+#             */
-/*   Updated: 2019/04/29 16:22:05 by vinograd         ###   ########.fr       */
+/*   Updated: 2019/05/01 18:46:15 by vinograd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,9 @@ char	*ft_strdup(char *s)
 	len = 0;
 	while (s[len])
 		len++;
-	str = (char*)malloc(len);
+	str = (char*)malloc(len + 1);
+	if (str == NULL)
+		return (NULL);
 	while (len >= 0)
 	{
 		str[len] = s[len];
