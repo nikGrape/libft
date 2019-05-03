@@ -6,7 +6,7 @@
 /*   By: vinograd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/30 14:26:17 by vinograd          #+#    #+#             */
-/*   Updated: 2019/05/01 23:06:24 by vinograd         ###   ########.fr       */
+/*   Updated: 2019/05/02 13:58:03 by vinograd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static int		elements_counter(char const *str, char c)
 	i = 0;
 	while (str[i])
 	{
-		while (str[i] == c  && str[i] != '\0')
+		while (str[i] == c && str[i] != '\0')
 			i++;
 		if (str[i])
 			words++;

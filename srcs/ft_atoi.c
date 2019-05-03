@@ -6,16 +6,18 @@
 /*   By: vinograd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/17 17:23:37 by vinograd          #+#    #+#             */
-/*   Updated: 2019/05/02 01:05:24 by vinograd         ###   ########.fr       */
+/*   Updated: 2019/05/02 21:28:34 by vinograd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_atoi(const char *s)
 {
-	int i;
 	int sign;
 	int res;
-
+	int i;
+	char min[] = "−9223372036854775808";
+	char max[] = "9223372036854775807";
+	
 	res = 0;
 	sign = 1;
 	i = 0;
@@ -33,10 +35,23 @@ int		ft_atoi(const char *s)
 		res = res * 10 + (s[i] - '0');
 		i++;
 	}
-	return (res * sign);
+	return ((int)res * sign);
 }
+
+#include <stdlib.h>
+
+int ft_atoi2(const char *s)
+{
+	return (atoi(s));
+}
+
 #include <stdio.h>
 int main()
 {
-	printf("%d\n", ft_atoi("-2147483648"));
+	char str[] = "-42949672957777888787"; 
+	printf("arigin\t%d\n", ft_atoi2(str));
+	printf("mine\t%d\n", ft_atoi(str));
+
 }
+
+

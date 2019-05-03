@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vinograd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/02 01:15:13 by vinograd          #+#    #+#             */
-/*   Updated: 2019/05/02 13:57:26 by vinograd         ###   ########.fr       */
+/*   Created: 2019/05/02 17:11:09 by vinograd          #+#    #+#             */
+/*   Updated: 2019/05/02 18:55:40 by vinograd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-void	*ft_memcpy(void *restrict dst, void *restrict src, size_t n)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t i;
-
-	i = 0;
-	while (i < n)
-	{
-		((char*)dst)[i] = *(char*)src;
-		src++;
-		i++;
-	}
+		while (len--)
+			((unsigned char*)dst)[len] = ((unsigned char*)src)[len];
 	return (dst);
 }
+/*
+#include <stdio.h>
+int main()
+{
+	char str[] = "Hello";
+	char dst[] = "wwwwwww";
+	printf("%s\n", ft_memmove(dst, str, 3));
+}
+*/

@@ -6,7 +6,7 @@
 /*   By: vinograd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/30 15:19:48 by vinograd          #+#    #+#             */
-/*   Updated: 2019/05/02 01:04:03 by vinograd         ###   ########.fr       */
+/*   Updated: 2019/05/02 20:14:34 by vinograd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,13 @@
 # include <stdio.h>
 # include <stdlib.h>
 
+void	*ft_memset(void *b, int c, size_t len);
+void	*ft_memcpy(void *restrict dst, void *restrict src, size_t n);
+void	*ft_memccpy(void *restrict dst, const void *restrict src, \
+		int c, size_t n);
+void	*ft_memmove(void *dst, const void *src, size_t len);
+void	*ft_memchr(const void *s, int c, size_t n);
+int		ft_memcmp(const void *s1, const void *s2, size_t n);
 char	**ft_strsplit(char const *str, char c);
 int		ft_atoi(const char *s);
 void	ft_bzero(void *s, size_t n);
