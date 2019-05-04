@@ -6,7 +6,7 @@
 /*   By: vinograd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/03 18:26:04 by vinograd          #+#    #+#             */
-/*   Updated: 2019/05/03 18:37:07 by vinograd         ###   ########.fr       */
+/*   Updated: 2019/05/03 19:10:24 by vinograd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <stddef.h>
 
+int		ft_atoi(const char *s);
 void	ft_bzero(void *s, size_t n);
 int		ft_isalnum(int i);
 int		ft_isalpha(int c);

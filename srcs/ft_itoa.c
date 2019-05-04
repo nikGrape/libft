@@ -6,7 +6,7 @@
 /*   By: vinograd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/30 15:32:09 by vinograd          #+#    #+#             */
-/*   Updated: 2019/05/02 00:51:19 by vinograd         ###   ########.fr       */
+/*   Updated: 2019/05/03 19:18:16 by vinograd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,3 +66,12 @@ char			*ft_itoa(int nbr)
 		get_string(str, nbr);
 	return (str);
 }
+/*
+#include <stdio.h>
+
+int main()
+{
+	char *s = ft_itoa(123);
+	printf("%s\n", s);
+}
+*/
