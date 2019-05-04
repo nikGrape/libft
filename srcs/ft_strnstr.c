@@ -6,7 +6,7 @@
 /*   By: vinograd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/30 21:04:22 by vinograd          #+#    #+#             */
-/*   Updated: 2019/05/02 20:32:52 by vinograd         ###   ########.fr       */
+/*   Updated: 2019/05/03 16:30:19 by vinograd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,3 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (0);
 }
-/*
-#include <stdio.h>
-int main()
-{
-	char str[] = "Hello world";
-	char str2[] = "llo";
-	printf("%s\n", ft_strnstr(str, str2, 8));
-}
-*/

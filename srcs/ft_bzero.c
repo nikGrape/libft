@@ -6,7 +6,7 @@
 /*   By: vinograd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/29 17:07:50 by vinograd          #+#    #+#             */
-/*   Updated: 2019/04/30 20:22:58 by vinograd         ###   ########.fr       */
+/*   Updated: 2019/05/03 17:56:50 by vinograd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	int		i;
+	size_t	i;
 	char	*str;
 
 	str = s;

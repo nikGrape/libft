@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vinograd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/02 18:55:55 by vinograd          #+#    #+#             */
-/*   Updated: 2019/05/03 13:27:04 by vinograd         ###   ########.fr       */
+/*   Created: 2019/05/03 14:59:22 by vinograd          #+#    #+#             */
+/*   Updated: 2019/05/03 16:31:24 by vinograd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+size_t			ft_strlcat(char *restrict dst, const char \
+		*restrict src, size_t dstsize)
 {
-	size_t i;
+	size_t len_dst;
+	size_t len_src;
 
-	i = 0;
-	while (i < n)
-	{
-		if (*(unsigned char*)s == (unsigned char)c)
-			return ((void*)s);
-		s++;
-		i++;
-	}
-	return (NULL);
+	len_dst = ft_strlen(dst);
+	len_src = ft_strlen((char*)src);
+	if (dstsize <= len_dst)
+		return (len_src + dstsize);
+	else
+		ft_strncat(dst, (char*)src, dstsize - len_dst - 1);
+	return (len_dst + len_src);
 }

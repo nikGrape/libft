@@ -1,16 +1,35 @@
-SRCS=*.c
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: vinograd <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2019/05/03 17:45:40 by vinograd          #+#    #+#              #
+#    Updated: 2019/05/03 17:54:59 by vinograd         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME=libft.a
-OBJ=*.o
 
-all:
-	gcc -c $(SRCS)
-	ar rc $(NAME) $(OBJ)
-	rm $(OBJ)
+SRCS=*.c
 
-clean: 
-	rm -f $(OBJ)
+OBJECTS=*.o
+
+INCLUDES=./
+
+all: $(NAME)
+
+$(NAME):
+	gcc -Wall -Wextra -Werror -I$(INCLUDES) -c $(SRCS)
+	ar -rc $(NAME) $(OBJECTS)
+	ranlib $(NAME)
+	/bin/rm -f *.o
+
+clean:
+	/bin/rm -f *.o
 
 fclean: clean
-	rm -f $(NAME)
+	/bin/rm -f $(NAME)
 
 re: fclean all
