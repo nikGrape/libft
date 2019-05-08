@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
 static int		elements_counter(char const *str, char c)
 {
@@ -38,7 +38,7 @@ static char		**memory_giver(char const *str, char c)
 	int		i;
 	int		j;
 
-	if ((res = (char **)malloc(sizeof(char*) * ft_strlen(str))) == NULL)
+	if ((res = (char **)malloc(sizeof(char*) * (elements_counter(str, c) + 1))) == NULL)
 		return (NULL);
 	i = 0;
 	j = 0;
@@ -56,6 +56,7 @@ static char		**memory_giver(char const *str, char c)
 			if ((res[j++] = (char *)malloc(sizeof(char) * letters + 1)) == NULL)
 				return (NULL);
 	}
+	res[j] = 0;
 	return (res);
 }
 
@@ -87,3 +88,15 @@ char			**ft_strsplit(char const *str, char c)
 	}
 	return (res);
 }
+/*
+#include <stdio.h>
+
+int main()
+{
+	char str[] = "I*want***to**finish*the*function*";
+	char **split = ft_strsplit(str, '*');
+	for (int j = 0; split[j] != 0 ;j++)
+		printf("%s\n", split[j]);
+
+}
+*/
