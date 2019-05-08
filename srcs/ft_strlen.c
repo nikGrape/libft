@@ -6,13 +6,13 @@
 /*   By: vinograd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/29 16:56:08 by vinograd          #+#    #+#             */
-/*   Updated: 2019/05/03 16:16:26 by vinograd         ###   ########.fr       */
+/*   Updated: 2019/05/07 15:06:40 by vinograd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-size_t	ft_strlen(char *s)
+size_t	ft_strlen(char const *s)
 {
 	int i;
 

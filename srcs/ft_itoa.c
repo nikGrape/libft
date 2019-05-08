@@ -6,14 +6,13 @@
 /*   By: vinograd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/30 15:32:09 by vinograd          #+#    #+#             */
-/*   Updated: 2019/05/06 11:25:45 by vinograd         ###   ########.fr       */
+/*   Updated: 2019/05/07 20:27:19 by vinograd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-static int		size(int i)
+static int	size(int i)
 {
 	int size;
 
@@ -34,44 +33,30 @@ static int		size(int i)
 	return (size);
 }
 
-static void		get_string(char *str, int nbr)
+char		*ft_itoa(int nbr)
 {
-	int		index;
-	int		sing;
+	char	*str;
+	int		len;
+	int		sign;
 
-	sing = 0;
-	index = 0;
+	if (nbr == -2147483648)
+		return (ft_strdup("-2147483648"));
+	len = size(nbr);
+	sign = 0;
 	if (nbr < 0)
 	{
-		str[0] = '-';
-		nbr *= -1;
+		sign = 1;
+		nbr = -nbr;
 	}
-	if (nbr >= 10)
-		get_string(str, nbr / 10);
-	while (str[index])
-		index++;
-	str[index] = nbr % 10 + '0';
-	str[++index] = '\0';
-}
-
-char			*ft_itoa(int nbr)
-{
-	char *str;
-
-	if ((str = (char *)malloc(size(nbr))) == NULL)
+	if ((str = (char *)malloc(len)) == NULL)
 		return (NULL);
-	if (nbr == -2147483648)
-		str = ft_strdup("-2147483648");
-	else
-		get_string(str, nbr);
+	str[--len] = '\0';
+	while (--len >= sign)
+	{
+		str[len] = nbr % 10 + '0';
+		nbr /= 10;
+	}
+	if (sign)
+		str[0] = '-';
 	return (str);
 }
-/*
-#include <stdio.h>
-
-int main()
-{
-	char *s = ft_itoa(123);
-	printf("%s\n", s);
-}
-*/

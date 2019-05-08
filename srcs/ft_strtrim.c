@@ -20,7 +20,7 @@ char	*ft_strtrim(char const *s)
 
 	if (s == NULL)
 		return (NULL);
-	len = ft_strlen((char*)s);
+	len = ft_strlen(s);
 	str = (char*)malloc(len + 1);
 	if (str == NULL)
 		return (NULL);

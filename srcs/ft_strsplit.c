@@ -6,11 +6,11 @@
 /*   By: vinograd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/30 14:26:17 by vinograd          #+#    #+#             */
-/*   Updated: 2019/05/02 13:58:03 by vinograd         ###   ########.fr       */
+/*   Updated: 2019/05/07 20:59:57 by vinograd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 static int		elements_counter(char const *str, char c)
 {
@@ -31,14 +31,14 @@ static int		elements_counter(char const *str, char c)
 	return (words);
 }
 
-static char		**memory_giver(char const *str, int size, char c)
+static char		**memory_giver(char const *str, char c)
 {
 	char	**res;
 	int		letters;
 	int		i;
 	int		j;
 
-	if ((res = (char **)malloc(sizeof(char*) * size)) == NULL)
+	if ((res = (char **)malloc(sizeof(char*) * ft_strlen(str))) == NULL)
 		return (NULL);
 	i = 0;
 	j = 0;
@@ -70,7 +70,7 @@ char			**ft_strsplit(char const *str, char c)
 	if (str == NULL)
 		return (NULL);
 	size = elements_counter(str, c);
-	res = memory_giver(str, size, c);
+	res = memory_giver(str, c);
 	if (res == NULL)
 		return (NULL);
 	i = 0;

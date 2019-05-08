@@ -6,7 +6,7 @@
 /*   By: vinograd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/03 18:26:04 by vinograd          #+#    #+#             */
-/*   Updated: 2019/05/06 20:54:06 by vinograd         ###   ########.fr       */
+/*   Updated: 2019/05/07 15:12:39 by vinograd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ char	*ft_strcpy(char *dst, const char *src);
 char	*ft_strdup(char *s);
 size_t	ft_strlcat(char *restrict dst, const char \
 		*restrict src, size_t dstsize);
-size_t	ft_strlen(char *s);
+size_t	ft_strlen(char const *s);
 char	*ft_strncat(char *str1, const char *str2, size_t n);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strncpy(char *dest, char *src, unsigned int n);
@@ -47,7 +47,6 @@ char	*ft_strrchr(const char *s, int c);
 char	*ft_strstr(const char *haystach, const char *needle);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
-// part 2
 void	*ft_memalloc(size_t size);
 void	ft_memdel(void **ap);
 char	*ft_strnew(size_t size);
@@ -65,7 +64,11 @@ char	*ft_strtrim(char const *s);
 char	**ft_strsplit(char const *str, char c);
 char	*ft_itoa(int nbr);
 void	ft_putchar(char c);
-void	ft_putendl(char const *s);// didn't do
+void	ft_putendl(char const *s);
 void	ft_putnbr(int n);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char const *s, int fd);
+void	ft_putendl_fd(char const *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
 
 #endif

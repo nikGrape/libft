@@ -1,41 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vinograd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/06 15:16:23 by vinograd          #+#    #+#             */
-/*   Updated: 2019/05/06 20:23:44 by vinograd         ###   ########.fr       */
+/*   Created: 2019/05/07 13:52:00 by vinograd          #+#    #+#             */
+/*   Updated: 2019/05/07 14:00:00 by vinograd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <unistd.h>
 
-char	*ft_strjoin(char const *s1, char const *s2)
+void	ft_putnbr_fd(int n, int fd)
 {
-	char	*str;
-	char	*res;
-	size_t	len;
+	char c;
 
-	if (s1 == NULL || s2 == NULL)
-		return (NULL);
-	len = ft_strlen(s1) + ft_strlen(s2);
-	if ((str = (char *)malloc(len + 1)) == NULL)
-		return (NULL);
-	res = str;
-	while (*s1)
+	if (n == -2147483648)
 	{
-		*str = *s1;
-		str++;
-		s1++;
+		write(fd, "-2147483648", 11);
+		return ;
 	}
-	while (*s2)
+	if (n < 0)
 	{
-		*str = *s2;
-		str++;
-		s2++;
+		write(fd, "-", 1);
+		n = -n;
 	}
-	*str = '\0';
-	return (res);
+	if (n >= 10)
+		ft_putnbr_fd(n / 10, fd);
+	c = n % 10 + '0';
+	write(fd, &c, 1);
 }
