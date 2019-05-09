@@ -11,17 +11,20 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 char	*ft_strtrim(char const *s)
 {
 	char	*str;
 	char	*res;
-	size_t	len;
+//	size_t	len;
+	int i;
 
+	i = 0;
 	if (s == NULL)
 		return (NULL);
-	len = ft_strlen(s);
-	str = (char*)malloc(len + 1);
+//	len = ft_strlen(s);
+
 	if (str == NULL)
 		return (NULL);
 	res = str;
@@ -32,22 +35,27 @@ char	*ft_strtrim(char const *s)
 		*str = *s;
 		str++;
 		s++;
+		i++;
 	}
 	str--;
 	while (*str == ' ' || *str == '\t' || *str == '\n')
+	{
 		str--;
+		i--;
+	}
+	printf("%d\n", i);
 	str++;
 	*str = '\0';
+	str = (char*)malloc(i + 1);
 	return (res);
 }
-/*
-// does not locate a good size
-#include <stdio.h>
 
-int ain()
+// does not locate a good size
+
+int	main()
 {
 	char str[] = "    hello world    ";
 	char *s = ft_strtrim(str);
 	printf("%s\n", s);
 }
-*/
+
