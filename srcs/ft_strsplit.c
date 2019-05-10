@@ -6,13 +6,13 @@
 /*   By: vinograd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/30 14:26:17 by vinograd          #+#    #+#             */
-/*   Updated: 2019/05/07 20:59:57 by vinograd         ###   ########.fr       */
+/*   Updated: 2019/05/09 17:34:01 by vinograd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-static int		elements_counter(char const *str, char c)
+static int		words(char const *str, char c)
 {
 	int i;
 	int words;
@@ -38,7 +38,7 @@ static char		**memory_giver(char const *str, char c)
 	int		i;
 	int		j;
 
-	if ((res = (char **)malloc(sizeof(char*) * (elements_counter(str, c) + 1))) == NULL)
+	if ((res = (char **)malloc(sizeof(char*) * (words(str, c) + 1))) == NULL)
 		return (NULL);
 	i = 0;
 	j = 0;
@@ -70,7 +70,7 @@ char			**ft_strsplit(char const *str, char c)
 
 	if (str == NULL)
 		return (NULL);
-	size = elements_counter(str, c);
+	size = words(str, c);
 	res = memory_giver(str, c);
 	if (res == NULL)
 		return (NULL);
@@ -88,15 +88,3 @@ char			**ft_strsplit(char const *str, char c)
 	}
 	return (res);
 }
-/*
-#include <stdio.h>
-
-int main()
-{
-	char str[] = "I*want***to**finish*the*function*";
-	char **split = ft_strsplit(str, '*');
-	for (int j = 0; split[j] != 0 ;j++)
-		printf("%s\n", split[j]);
-
-}
-*/
