@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_memdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vinograd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/06 11:21:37 by vinograd          #+#    #+#             */
-/*   Updated: 2019/05/10 20:27:02 by vinograd         ###   ########.fr       */
+/*   Created: 2019/05/10 13:20:16 by vinograd          #+#    #+#             */
+/*   Updated: 2019/05/10 13:35:13 by vinograd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-char	*ft_strnew(size_t size)
+void	*ft_memdup(void const *src, size_t len)
 {
-	char *str;
+	void	*dst;
+	size_t	i;
 
-	str = (char *)malloc(sizeof(char) * (size + 1));
-	if (str == NULL)
+	i = 0;
+	if ((dst = malloc(len)) == NULL)
 		return (NULL);
-	while (size > 0)
-		str[size--] = '\0';
-	str[0] = '\0';
-	return (str);
+	while (i < len)
+	{
+		((char*)dst)[i] = ((char*)src)[i];
+		i++;
+	}
+	return (dst);
 }

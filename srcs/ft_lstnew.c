@@ -6,7 +6,7 @@
 /*   By: vinograd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/09 18:39:50 by vinograd          #+#    #+#             */
-/*   Updated: 2019/05/09 18:40:55 by vinograd         ###   ########.fr       */
+/*   Updated: 2019/05/10 13:49:24 by vinograd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,15 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 	if ((new_list = (t_list*)malloc(sizeof(t_list))) == NULL)
 		return (NULL);
 	if (content == NULL)
+	{
 		new_list->content_size = 0;
+		new_list->content = NULL;
+	}
 	else
+	{
 		new_list->content_size = content_size;
+		new_list->content = ft_memdup(content, content_size);
+	}
 	new_list->next = NULL;
-	new_list->content = (void*)content;
 	return (new_list);
 }
