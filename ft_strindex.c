@@ -6,25 +6,29 @@
 /*   By: vinograd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/13 11:50:51 by vinograd          #+#    #+#             */
-/*   Updated: 2019/05/13 11:50:57 by vinograd         ###   ########.fr       */
+/*   Updated: 2019/05/13 21:22:51 by vinograd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strindex(char *highstack, char *needle)
+int	ft_strindex(char *haystack, char *needle)
 {
 	int i;
 	int j;
+	int n;
 
 	i = 0;
-	while (highstack[i++])
+	while (haystack[i])
 	{
 		j = 0;
-		while (needle[j] == highstack[i] && highstack[i])
+		n = i;
+		while (needle[j] == haystack[n])
 		{
-			i++;
-			if (needle[++j] == '\0')
-				return (i - j);
+			if (needle[j + 1] == '\0')
+				return (i);
+				n++;
+				j++;
 		}
+		i++;
 	}
 	return (-1);
 }
