@@ -1,0 +1,2 @@
+# libft
+ft_library
