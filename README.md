@@ -1,4 +1,43 @@
- # LIBFT 
+ # **LIBFT**
+ 
+ ### **MAP**
+ #### FIRST PART
+ 
+ 		1. ft_memset		11. ft_strncpy		21. ft_atoi
+		2. ft_bzero		12. ft_strcat		22. ft_isalpha
+		3. ft_memcpy		13. ft_strncat		23. ft_isdigit
+ 		4. ft_memccpy		14. ft_strlcat		24. ft_isalnum
+ 		5. ft_memmove		15. ft_strchr		25. ft_isascii
+ 		6. ft_memchr		16. ft_strrchr		26. ft_isprint
+ 		7. ft_memcmp		17. ft_strstr		27. ft_toupper
+ 		8. ft_strlen		18. ft_strnstr		28. ft_tolower
+ 		9. ft_strdup		19. ft_strcmp
+		10. ft_strcpy		20. ft_strncmp
+#### SECOND PART
+
+		29. ft_memalloc		37. ft_strmapi		45. ft_putchar
+		30. ft_memdel		38. ft_strequ		46. ft_putstr
+		31. ft_strnew		39. ft_strnequ	 	47. ft_putendl
+		32. ft_strdel		40. ft_strsub		48. ft_putnbr
+		33. ft_strclr		41. ft_strjoin	 	49. ft_putchar_fd
+		34. ft_striter		42. ft_strtrim		50. ft_putstr_fd
+		35. ft_striteri		43. ft_strsplit		51. ft_putendl_fd
+		36. ft_strmap		44. ft_itoa		52. ft_putnbr_fd
+
+#### BONUS PART
+		
+		53. ft_lstnew		56. ft_lstadd
+		45. ft_lstdelone	57. ft_lstiter
+		55. ft_lstdel		58. ft_lstmap	
+
+#### EXTRA FUNCTIONS
+ 
+		59. ft_strindex
+		60. ft_wdcounter
+		61. ft_memdup.c
+
+## **FIRST PART**
+<string.h>
 
 ### 1. FT_MEMSET
 + SYNOPSIS:
@@ -117,17 +156,7 @@
 		If insufficient memory is available, NULL is returned and errno is set to
 		ENOMEM.
 
-### 9. FT_STRNDUP
-+ SYNPSIS:
-
-		char	*strndup(const char *s1, size_t n);
-
-+ DESCRIPTION:
-
-		The strndup() function copies at most n characters from the string s1
-		always NUL terminating the copied string.
-
-### 9. FT_STRCPY
+### 10. FT_STRCPY
 + SYNPSIS:
 
 		char	*strcpy(char * dst, const char * src);
@@ -138,7 +167,7 @@
 + RETURN VALUES:
 
 		The strcpy() returns dst.
-### 9. FT_STRNCPY
+### 11. FT_STRNCPY
 + SYNPSIS:
 
 		char	*strncpy(char * dst, const char * src, size_t len);
@@ -150,7 +179,7 @@
 + RETURN VALUES:
 
 		The strncpy() returns dst.
-### 9. FT_STRCAT
+### 12. FT_STRCAT
 + SYNPSIS:
 
 		char	*strcat(char *restrict s1, const char *restrict s2);
@@ -162,7 +191,7 @@
 + RETURN VALUES:
 
 		The strcat() and strncat() functions return the pointer s1.
-### 9. FT_STRNCAT
+### 13. FT_STRNCAT
 + SYNPSIS:
 
 		char	*strncat(char *restrict s1, const char *restrict s2, size_t n);
@@ -173,7 +202,7 @@
 + RETURN VALUES:
 		
 		The strcat() and strncat() functions return the pointer s1.
-### 9. FT_STRLCAT
+### 14. FT_STRLCAT
 + SYNPSIS:
 		
 		size_t
@@ -191,7 +220,7 @@
 		
 		The strlcat() returns the initial length of dst plus
 		the length of src.
-### 9. FT_STRCHR
+### 15. FT_STRCHR
 + SYNPSIS:
 
 		char	*strchr(const char *s, int c);
@@ -205,7 +234,7 @@
 
 		The functions strchr() and strrchr() return a pointer to the located
 		character, or NULL if the character does not appear in the string.
-### 9. FT_STRRCHR
+### 16. FT_STRRCHR
 + SYNPSIS:
 
 		char	*strrchr(const char *s, int c);
@@ -214,7 +243,7 @@
 		The strrchr() function is identical to strchr(), except it locates the
 		last occurrence of c.
 
-### 9. FT_STRSTR
+### 17. FT_STRSTR
 + SYNPSIS:
 
 		char	*strstr(const char *haystack, const char *needle);
@@ -227,7 +256,7 @@
 		If needle is an empty string, haystack is returned; if needle occurs
 		nowhere in haystack, NULL is returned; otherwise a pointer to the first
 		character of the first occurrence of needle is returned.
-### 9. FT_STRNSTR
+### 18. FT_STRNSTR
 + SYNPSIS:
 
 		char	*strnstr(const char *haystack, const char *needle, size_t len);
@@ -239,3 +268,131 @@
 		not searched.  Since the strnstr() function is a FreeBSD specific API, it
 		should only be used when portability is not a concern.
 + RETURN VALUES:
+		
+		Look FT_STRSTR
+		
+### 19. FT_STRCMP
++ SYNPSIS:
+
+		int	strcmp(const char *s1, const char *s2);
++ DESCRIPTION:
+
+		The strcmp() and strncmp() functions lexicographically compare the null-
+		terminated strings s1 and s2.
++ RETURN VALUES:
+
+		The strcmp() and strncmp() functions return an integer greater than,
+		equal to, or less than 0, according as the string s1 is greater than,
+		equal to, or less than the string s2.  The comparison is done using
+		unsigned characters, so that `\200' is greater than `\0'.
+### 20. FT_STRNCMP
++ SYNPSIS:
+
+		int	strncmp(const char *s1, const char *s2, size_t n);
++ DESCRIPTION:
+
+		The strncmp() function compares not more than n characters
++ RETURN VALUES:
+
+		Look FT_STRCMP
+### 21. FT_ATOI
++ SYNPSIS:
+		
+		#include <stdlib.h>
+		int	atoi(const char *str);
++ DESCRIPTION:
+
+		The atoi() function converts the initial portion of the string pointed to
+		by str to int representation
+### 22. FT_ISALPHA
++ SYNPSIS:
+		
+		#include <ctype.h>
+		int	isalpha(int c);
++ DESCRIPTION:
+
+		The isalpha() function tests for any character for which isupper(3) or
+		islower(3) is true
++ RETURN VALUES:
+		
+		The isalpha() function returns zero if the character tests false and
+		returns non-zero if the character tests true
+### 23. FT_ISDIGIT
++ SYNPSIS:
+		
+		#include <ctype.h>
+		int	isdigit(int c);
++ DESCRIPTION:
+		
+		The isdigit() function tests for a decimal digit character.
++ RETURN VALUES:
+		
+		The isdigit() function returns zero if the character tests
+		false and return non-zero if the character tests true.
+### 24. FT_ISALNUM
++ SYNPSIS:
+
+		#include <ctype.h>
+		int	isalnum(int c);
++ DESCRIPTION:
+		
+		The isalnum() function tests for any character for which isalpha(3) or
+		isdigit(3) is true.
++ RETURN VALUES:
+		
+		The isalnum() function returns zero if the character tests false and
+		returns non-zero if the character tests true.
+### 25. FT_ISASCII
++ SYNPSIS:
+
+		#include <ctype.h>
+		int	isascii(int c);
++ DESCRIPTION:
+	
+		The isascii() function tests for an ASCII character, which is any charac-
+		ter between 0 and octal 0177 inclusive.
+
+### 26. FT_ISPRINT
++ SYNPSIS:
+		
+		#include <ctype.h>
+		int	isprint(int c);
++ DESCRIPTION:
+		
+		The isprint() function tests for any printing character, 
+		including space(` ').
++ RETURN VALUES:
+		
+		The isprint() function returns zero if the character tests false and
+		returns non-zero if the character tests true.
+### 27. FT_TOUPPER
++ SYNPSIS:
+		
+		#include <ctype.h>
+		int	toupper(int c);
++ DESCRIPTION:
+
+		The toupper() function converts a lower-case letter to the corresponding
+		upper-case letter.
++ RETURN VALUES:
+
+		If the argument is a lower-case letter, the toupper() function returns
+		the corresponding upper-case letter if there is one; otherwise, the argu-
+		ment is returned unchanged.
+### 28. FT_TOLOWER
++ SYNPSIS:
+
+		#include <ctype.h>
+		int	tolower(int c);
++ DESCRIPTION:
+
+		The tolower() function converts an upper-case letter to the corresponding
+		lower-case letter
++ RETURN VALUES
+		
+		If the argument is an upper-case letter, the tolower() function returns
+		the corresponding lower-case letter if there is one; otherwise, the argu-
+		ment is returned unchanged.
+		
+
+## **SECOND PART**
