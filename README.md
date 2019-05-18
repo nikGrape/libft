@@ -36,7 +36,7 @@
 		60. ft_wdcounter
 		61. ft_memdup.c
 
-## **FIRST PART**
+1. ## **FIRST PART**
 <string.h>
 
 ### 1. FT_MEMSET
@@ -395,4 +395,4 @@
 		ment is returned unchanged.
 		
 
-## **SECOND PART**
+2. ## **SECOND PART**
