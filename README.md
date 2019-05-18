@@ -36,10 +36,10 @@
 		60. ft_wdcounter
 		61. ft_memdup.c
 
-1. ## **FIRST PART**
+## 1. **FIRST PART**
 <string.h>
 
-### 1. FT_MEMSET
+###  1. FT_MEMSET
 + SYNOPSIS:
 
  		void	memset(void *b, int c, size_t len)
@@ -52,7 +52,7 @@
 
 		The memset() function returns its first argument.
 
-### 2. FT_BZERO
+###  2. FT_BZERO
 + SYNOPSIS:
 
 		void    bzero(void *s, size_t n)
@@ -61,7 +61,7 @@
 		The bzero() function writes n zeroed bytes to the string s.  
 		If n is zero, bzero() does nothing.
 
-### 3. FT_MEMCPY
+###  3. FT_MEMCPY
 + SYNOPSIS:
 
 		void	*memcpy(void *restrict dst, const void *restrict src, size_t n)
@@ -73,7 +73,7 @@
 
 		The memcpy() function returns the original value of dst.
 
-### 4. FT_MEMCCPY
+###  4. FT_MEMCCPY
 + SYNPSIS:
 
 		void *
@@ -88,7 +88,7 @@
 		The source and destination strings should not overlap, as the behavior is
 		undefined.
 		
-### 5. FT_MEMMOVE
+###  5. FT_MEMMOVE
 + SYNPSIS:
 
 		void	*memmove(void *dst, const void *src, size_t len);
@@ -101,7 +101,7 @@
 
 		The memmove() function returns the original value of dst.
 		
-### 6. FT_MEMCHR
+###  6. FT_MEMCHR
 + SYNPSIS:
 
 		void	*memchr(const void *s, int c, size_t n);
@@ -114,7 +114,7 @@
 		The memchr() function returns a pointer to the byte located, or NULL if
      		no such byte exists within n bytes.
 		
-### 7. FT_MEMCMP
+###  7. FT_MEMCMP
 + SYNPSIS:
 
 		int	memcmp(const void *s1, const void *s2, size_t n);
@@ -131,7 +131,7 @@
 		is not required by C and portable code should only depend on the sign of
 		the returned value.
 
-### 8. FT_STRLEN
+###  8. FT_STRLEN
 + SYNPSIS:
 		
 		size_t	strlen(const char *s);
@@ -144,7 +144,7 @@
 		The strlen() function returns the number of characters that precede the
 		terminating NUL character
 
-### 9. FT_STRDUP
+###  9. FT_STRDUP
 + SYNPSIS:
 		
 		char	*strdup(const char *s1);
@@ -156,7 +156,7 @@
 		If insufficient memory is available, NULL is returned and errno is set to
 		ENOMEM.
 
-### 10. FT_STRCPY
+###  10. FT_STRCPY
 + SYNPSIS:
 
 		char	*strcpy(char * dst, const char * src);
@@ -167,7 +167,7 @@
 + RETURN VALUES:
 
 		The strcpy() returns dst.
-### 11. FT_STRNCPY
+###  11. FT_STRNCPY
 + SYNPSIS:
 
 		char	*strncpy(char * dst, const char * src, size_t len);
@@ -179,7 +179,7 @@
 + RETURN VALUES:
 
 		The strncpy() returns dst.
-### 12. FT_STRCAT
+###  12. FT_STRCAT
 + SYNPSIS:
 
 		char	*strcat(char *restrict s1, const char *restrict s2);
@@ -191,7 +191,7 @@
 + RETURN VALUES:
 
 		The strcat() and strncat() functions return the pointer s1.
-### 13. FT_STRNCAT
+###  13. FT_STRNCAT
 + SYNPSIS:
 
 		char	*strncat(char *restrict s1, const char *restrict s2, size_t n);
@@ -202,7 +202,7 @@
 + RETURN VALUES:
 		
 		The strcat() and strncat() functions return the pointer s1.
-### 14. FT_STRLCAT
+###  14. FT_STRLCAT
 + SYNPSIS:
 		
 		size_t
@@ -220,7 +220,7 @@
 		
 		The strlcat() returns the initial length of dst plus
 		the length of src.
-### 15. FT_STRCHR
+###  15. FT_STRCHR
 + SYNPSIS:
 
 		char	*strchr(const char *s, int c);
@@ -234,7 +234,7 @@
 
 		The functions strchr() and strrchr() return a pointer to the located
 		character, or NULL if the character does not appear in the string.
-### 16. FT_STRRCHR
+###  16. FT_STRRCHR
 + SYNPSIS:
 
 		char	*strrchr(const char *s, int c);
@@ -243,7 +243,7 @@
 		The strrchr() function is identical to strchr(), except it locates the
 		last occurrence of c.
 
-### 17. FT_STRSTR
+###  17. FT_STRSTR
 + SYNPSIS:
 
 		char	*strstr(const char *haystack, const char *needle);
@@ -256,7 +256,7 @@
 		If needle is an empty string, haystack is returned; if needle occurs
 		nowhere in haystack, NULL is returned; otherwise a pointer to the first
 		character of the first occurrence of needle is returned.
-### 18. FT_STRNSTR
+###  18. FT_STRNSTR
 + SYNPSIS:
 
 		char	*strnstr(const char *haystack, const char *needle, size_t len);
@@ -271,7 +271,7 @@
 		
 		Look FT_STRSTR
 		
-### 19. FT_STRCMP
+###  19. FT_STRCMP
 + SYNPSIS:
 
 		int	strcmp(const char *s1, const char *s2);
@@ -285,7 +285,7 @@
 		equal to, or less than 0, according as the string s1 is greater than,
 		equal to, or less than the string s2.  The comparison is done using
 		unsigned characters, so that `\200' is greater than `\0'.
-### 20. FT_STRNCMP
+###  20. FT_STRNCMP
 + SYNPSIS:
 
 		int	strncmp(const char *s1, const char *s2, size_t n);
@@ -295,7 +295,7 @@
 + RETURN VALUES:
 
 		Look FT_STRCMP
-### 21. FT_ATOI
+###  21. FT_ATOI
 + SYNPSIS:
 		
 		#include <stdlib.h>
@@ -304,7 +304,7 @@
 
 		The atoi() function converts the initial portion of the string pointed to
 		by str to int representation
-### 22. FT_ISALPHA
+###  22. FT_ISALPHA
 + SYNPSIS:
 		
 		#include <ctype.h>
@@ -317,7 +317,7 @@
 		
 		The isalpha() function returns zero if the character tests false and
 		returns non-zero if the character tests true
-### 23. FT_ISDIGIT
+###  23. FT_ISDIGIT
 + SYNPSIS:
 		
 		#include <ctype.h>
@@ -329,7 +329,7 @@
 		
 		The isdigit() function returns zero if the character tests
 		false and return non-zero if the character tests true.
-### 24. FT_ISALNUM
+###  24. FT_ISALNUM
 + SYNPSIS:
 
 		#include <ctype.h>
@@ -342,7 +342,7 @@
 		
 		The isalnum() function returns zero if the character tests false and
 		returns non-zero if the character tests true.
-### 25. FT_ISASCII
+###  25. FT_ISASCII
 + SYNPSIS:
 
 		#include <ctype.h>
@@ -352,7 +352,7 @@
 		The isascii() function tests for an ASCII character, which is any charac-
 		ter between 0 and octal 0177 inclusive.
 
-### 26. FT_ISPRINT
+###  26. FT_ISPRINT
 + SYNPSIS:
 		
 		#include <ctype.h>
@@ -365,7 +365,7 @@
 		
 		The isprint() function returns zero if the character tests false and
 		returns non-zero if the character tests true.
-### 27. FT_TOUPPER
+###  27. FT_TOUPPER
 + SYNPSIS:
 		
 		#include <ctype.h>
@@ -379,7 +379,7 @@
 		If the argument is a lower-case letter, the toupper() function returns
 		the corresponding upper-case letter if there is one; otherwise, the argu-
 		ment is returned unchanged.
-### 28. FT_TOLOWER
+###  28. FT_TOLOWER
 + SYNPSIS:
 
 		#include <ctype.h>
@@ -395,4 +395,4 @@
 		ment is returned unchanged.
 		
 
-2. ## **SECOND PART**
+## 2. **SECOND PART**
