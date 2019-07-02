@@ -6,7 +6,7 @@
 /*   By: Nik <Nik@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/03 18:26:04 by vinograd          #+#    #+#             */
-/*   Updated: 2019/07/02 11:56:49 by Nik              ###   ########.fr       */
+/*   Updated: 2019/07/02 13:23:47 by Nik              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <stddef.h>
 # include <fcntl.h>
+# include "ft_printf.h"
 
 typedef struct	s_list
 {
@@ -127,5 +128,6 @@ char			*ft_stradd(char *str, char ch);
 ** Extra functions II
 */
 int				get_next_line(const int fd, char **line);
+int				ft_printf(const char *str, ...);
 
 #endif
