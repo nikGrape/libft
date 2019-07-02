@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft2.h                                           :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vinograd <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: Nik <Nik@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/03 18:26:04 by vinograd          #+#    #+#             */
-/*   Updated: 2019/05/10 16:44:42 by vinograd         ###   ########.fr       */
+/*   Updated: 2019/07/02 11:56:49 by Nik              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# define BUFF_SIZE 10
 # include <unistd.h>
 # include <stdlib.h>
 # include <stddef.h>
+# include <fcntl.h>
 
 typedef struct	s_list
 {
@@ -22,6 +24,13 @@ typedef struct	s_list
 	size_t			content_size;
 	struct s_list	*next;
 }				t_list;
+
+typedef struct	s_arr
+{
+	int				fd;
+	char			*rest;
+	struct s_arr	*next;
+}				t_arr;
 
 int				ft_atoi(const char *s);
 void			ft_bzero(void *s, size_t n);
@@ -37,7 +46,6 @@ int				ft_memcmp(const void *s1, const void *s2, size_t n);
 void			*ft_memcpy(void *restrict dst, void *restrict src, size_t n);
 void			*ft_memmove(void *dst, const void *src, size_t len);
 void			*ft_memset(void *b, int c, size_t len);
-void			ft_putstr(char const *s);
 char			*ft_strcat(char *restrict str1, const char *restrict str2);
 char			*ft_strchr(const char *s, int c);
 int				ft_strcmp(const char *s1, const char *s2);
@@ -56,7 +64,9 @@ char			*ft_strstr(const char *haystach, const char *needle);
 int				ft_tolower(int c);
 int				ft_toupper(int c);
 /*
-	**Second part
+**	Second part
+**	ft_putstr was chended
+**		now it returns number of printed characters
 */
 void			*ft_memalloc(size_t size);
 void			ft_memdel(void **ap);
@@ -77,6 +87,7 @@ char			*ft_itoa(int nbr);
 void			ft_putchar(char c);
 void			ft_putendl(char const *s);
 void			ft_putnbr(int n);
+int				ft_putstr(char const *s);
 void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char const *s, int fd);
 void			ft_putendl_fd(char const *s, int fd);
@@ -91,8 +102,30 @@ void			ft_lstadd(t_list **alst, t_list *new);
 void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 /*
-	**Extra functions
+** Extra functions
+**		ft_strjoin_free:
+**			index 1 - free first parametr
+**			index 2 - free second parametr
+**			index 3 - free both parametrs
+**		ft_stradd - add a character(ch) to the end of the line(str)
 */
 void			*ft_memdup(void const *src, size_t len);
+int				ft_wdcounter(char const *str, char c);
+int				ft_strindex(char *haystack, char *needle);
+void			ft_swap(char *c1, char *c2);
+char			*ft_ftoa(double nbr, unsigned int precision);
+char			*ft_ftoa_long(long double nbr, unsigned int precision);
+char			*ft_itoa_unsigned(size_t nbr);
+char			*ft_itoa_long(long nbr);
+char			*ft_itoa_base(unsigned int nbr, int base);
+char			*ft_itoa_base_unsigned(size_t nbr, int base);
+void			ft_strupper(char *str);
+void			ft_strlower(char *str);
+char			*ft_strjoin_free(char *s1, char *s2, int indx);
+char			*ft_stradd(char *str, char ch);
+/*
+** Extra functions II
+*/
+int				get_next_line(const int fd, char **line);
 
 #endif

@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_itoa_big.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vinograd <vinograd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/17 17:23:37 by vinograd          #+#    #+#             */
-/*   Updated: 2019/06/04 17:54:47 by vinograd         ###   ########.fr       */
+/*   Created: 2019/06/25 15:28:12 by vinograd          #+#    #+#             */
+/*   Updated: 2019/06/29 19:49:34 by vinograd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_atoi(const char *s)
-{
-	int sign;
-	int res;
-	int i;
+#include "libft.h"
 
-	res = 0;
-	i = 0;
-	while ((s[i] > 8 && s[i] < 20) || s[i] == ' ')
-		i++;
-	sign = (s[i] == '-') ? -1 : 1;
-	if (s[i] == '+' || s[i] == '-')
-		i++;
-	while ((s[i] >= '0' && s[i] <= '9') && s[i] != '\0')
-		res = res * 10 + (s[i++] - '0');
-	return (res * sign);
+char		*ft_itoa_unsigned(size_t nbr)
+{
+	char ch;
+	char *str;
+
+	str = NULL;
+	if (nbr >= 10)
+		str = ft_itoa_unsigned(nbr / 10);
+	ch = nbr % 10 + '0';
+	return (ft_stradd(str, ch));
+}
+
+char		*ft_itoa_long(long nbr)
+{
+	if (nbr < 0)
+		return (ft_strjoin_free("-", ft_itoa_unsigned(-nbr), 2));
+	else
+		return (ft_itoa_unsigned(nbr));
 }

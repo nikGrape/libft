@@ -6,7 +6,7 @@
 /*   By: vinograd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/13 11:50:51 by vinograd          #+#    #+#             */
-/*   Updated: 2019/05/13 21:22:51 by vinograd         ###   ########.fr       */
+/*   Updated: 2019/05/14 14:16:39 by vinograd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ int	ft_strindex(char *haystack, char *needle)
 		{
 			if (needle[j + 1] == '\0')
 				return (i);
-				n++;
-				j++;
+			n++;
+			j++;
 		}
 		i++;
 	}

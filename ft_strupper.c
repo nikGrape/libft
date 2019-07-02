@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strupper.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vinograd <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vinograd <vinograd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/02 01:15:13 by vinograd          #+#    #+#             */
-/*   Updated: 2019/05/14 19:27:36 by vinograd         ###   ########.fr       */
+/*   Created: 2019/06/25 14:42:44 by vinograd          #+#    #+#             */
+/*   Updated: 2019/06/25 14:54:12 by vinograd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
-void	*ft_memcpy(void *restrict dst, void *restrict src, size_t n)
+void	ft_strupper(char *str)
 {
-	size_t i;
-
-	i = 0;
-	while (i < n)
+	while (*str)
 	{
-		((char*)dst)[i] = *(char*)src;
-		src++;
-		i++;
+		*str = ft_toupper(*str);
+		str++;
 	}
-	return (dst);
 }

@@ -1,29 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_stradd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vinograd <vinograd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/17 17:23:37 by vinograd          #+#    #+#             */
-/*   Updated: 2019/06/04 17:54:47 by vinograd         ###   ########.fr       */
+/*   Created: 2019/06/24 21:50:31 by vinograd          #+#    #+#             */
+/*   Updated: 2019/06/25 21:10:35 by vinograd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_atoi(const char *s)
-{
-	int sign;
-	int res;
-	int i;
+/*
+**	add a new character in the end of the string
+*/
 
-	res = 0;
-	i = 0;
-	while ((s[i] > 8 && s[i] < 20) || s[i] == ' ')
-		i++;
-	sign = (s[i] == '-') ? -1 : 1;
-	if (s[i] == '+' || s[i] == '-')
-		i++;
-	while ((s[i] >= '0' && s[i] <= '9') && s[i] != '\0')
-		res = res * 10 + (s[i++] - '0');
-	return (res * sign);
+#include "libft.h"
+
+char	*ft_stradd(char *str, char ch)
+{
+	int		len;
+	char	*new;
+
+	len = 0;
+	if (str)
+	{
+		len = ft_strlen(str);
+		if (!(new = (char*)ft_strnew(len + 1)))
+			return (NULL);
+		ft_strcat(new, str);
+		ft_strdel(&str);
+	}
+	else
+		new = ft_strnew(1);
+	new[len] = ch;
+	new[len + 1] = '\0';
+	return (new);
 }
