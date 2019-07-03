@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   redactor.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Nik <Nik@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: vinograd <vinograd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/01 10:40:30 by vinograd          #+#    #+#             */
-/*   Updated: 2019/07/02 17:43:47 by Nik              ###   ########.fr       */
+/*   Updated: 2019/07/03 15:34:49 by vinograd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,16 @@ static char	*width_redactor(char *arg, char *dash, t_flag flags)
 {
 	int		len;
 	char	*str;
+	char	*dot;
 
-	if (flags.spcf != 'f')
+	dot = ft_strchr(arg, '.');
+	if (flags.spcf != 'f' || !dot)
 	{
 		len = ft_strlen(arg);
 		len = (dash) ? len - 1 : len;
 	}
 	else
-		len = ft_strlen(ft_strchr(arg, '.')) - 1;
+		len = ft_strlen(dot) - 1;
 	if (flags.width > len)
 	{
 		str = ft_strnew(flags.width - len);
@@ -73,7 +75,7 @@ static char	*length_redactor(char *arg, register t_flag flags, int len)
 		(flags.spcf == 'd' || flags.spcf == 'f'))
 			ft_swap(ft_strchr(arg, '0'), ft_strchr(arg, '+'));
 	}
-	else if (flags.spase && flags.spcf == 'd' && !dash)
+	else if (flags.spase && (flags.spcf == 'd' || flags.spcf == 'f') && !dash)
 		arg = ft_strjoin_free(" ", arg, 2);
 	return (arg);
 }
