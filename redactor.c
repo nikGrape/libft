@@ -6,7 +6,7 @@
 /*   By: Nik <Nik@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/01 10:40:30 by vinograd          #+#    #+#             */
-/*   Updated: 2019/07/02 13:30:40 by Nik              ###   ########.fr       */
+/*   Updated: 2019/07/02 17:43:47 by Nik              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static char	*hashtag_redactor(register int specifier, char *arg, short width)
 	return (arg);
 }
 
-static char	*add_zeros(char *arg, char *dash, t_flag flags)
+static char	*width_redactor(char *arg, char *dash, t_flag flags)
 {
 	int		len;
 	char	*str;
@@ -50,7 +50,7 @@ static char	*add_zeros(char *arg, char *dash, t_flag flags)
 	return (arg);
 }
 
-static char	*final_redactor(char *arg, register t_flag flags, int len)
+static char	*length_redactor(char *arg, register t_flag flags, int len)
 {
 	char			*str;
 	char			*dash;
@@ -84,7 +84,7 @@ char		*redactor(char *arg, t_flag flags, register char spcf)
 
 	flags.spcf = spcf;
 	dash = ft_strchr(arg, '-');
-	arg = add_zeros(arg, dash, flags);
+	arg = width_redactor(arg, dash, flags);
 	if (flags.hashtag || spcf == 'p')
 		arg = hashtag_redactor(spcf, arg, flags.width);
 	if (!flags.width && !ft_strcmp(arg, "0") &&\
@@ -94,7 +94,7 @@ char		*redactor(char *arg, t_flag flags, register char spcf)
 	if (!dash && flags.plus && (spcf == 'd' || spcf == 'f'))
 		arg = ft_strjoin_free("+", arg, 2);
 	flags.filler = (flags.width != -1 && spcf != 'f') ? ' ' : flags.filler;
-	arg = final_redactor(arg, flags, ft_strlen(arg));
+	arg = length_redactor(arg, flags, ft_strlen(arg));
 	return (arg);
 }
 
@@ -104,7 +104,7 @@ char		*str_redactor(char *arg, register t_flag flags)
 	int		len;
 
 	len = ft_strlen(arg);
-	if (flags.width != -1 && flags.width < len)
+	if (flags.width != -1 && flags.width < len && flags.spcf != '%')
 	{
 		arg[flags.width] = '\0';
 		len = flags.width;
