@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Nik <Nik@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: vinograd <vinograd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/19 11:15:24 by vinograd          #+#    #+#             */
-/*   Updated: 2019/07/02 13:25:20 by Nik              ###   ########.fr       */
+/*   Updated: 2019/07/09 18:47:02 by vinograd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_printf(const char *str, ...)
+int		ft_printf(const char *format, ...)
 {
 	va_list	ap;
 	t_flag	flags;
@@ -20,20 +20,21 @@ int		ft_printf(const char *str, ...)
 	int		total;
 
 	total = 0;
-	va_start(ap, str);
-	while (*str)
+	va_start(ap, format);
+	while (*format)
 	{
-		if (*str != '%')
+		format += (*format == '{') ? color_redactor(format) : 0;
+		if (*format != '%' && *format)
 		{
-			ft_putchar(*str++);
+			ft_putchar(*format++);
 			total++;
 			continue ;
 		}
-		flags = flag_analazer(++str);
-		str += flags.steps;
-		if (!(s = specifier(*str++, flags, &ap)))
+		flags = (*format) ? flag_analazer(++format) : flag_analazer(format);
+		if (!(s = specifier(&flags, &ap)))
 			continue ;
-		total += ft_putstr(s);
+		format += flags.steps;
+		total += (flags.spcf != 'N') ? ft_putstr(s) : putstr_for_null_char(s);
 		ft_strdel(&s);
 	}
 	va_end(ap);
