@@ -6,11 +6,11 @@
 /*   By: vinograd <vinograd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/22 17:05:39 by vinograd          #+#    #+#             */
-/*   Updated: 2019/07/09 18:51:29 by vinograd         ###   ########.fr       */
+/*   Updated: 2019/07/15 11:30:39 by vinograd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "ft_printf.h"
 
 static int		is_flag(register char ch)
 {

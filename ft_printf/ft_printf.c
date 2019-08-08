@@ -6,11 +6,11 @@
 /*   By: vinograd <vinograd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/19 11:15:24 by vinograd          #+#    #+#             */
-/*   Updated: 2019/07/09 18:47:02 by vinograd         ###   ########.fr       */
+/*   Updated: 2019/07/20 18:17:47 by vinograd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
 int		ft_printf(const char *format, ...)
 {
@@ -34,7 +34,7 @@ int		ft_printf(const char *format, ...)
 		if (!(s = specifier(&flags, &ap)))
 			continue ;
 		format += flags.steps;
-		total += (flags.spcf != 'N') ? ft_putstr(s) : putstr_for_null_char(s);
+		total += putstr_color(s);
 		ft_strdel(&s);
 	}
 	va_end(ap);

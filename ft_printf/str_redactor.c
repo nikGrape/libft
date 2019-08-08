@@ -6,18 +6,18 @@
 /*   By: vinograd <vinograd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/08 20:09:48 by vinograd          #+#    #+#             */
-/*   Updated: 2019/07/09 18:51:38 by vinograd         ###   ########.fr       */
+/*   Updated: 2019/07/20 19:02:29 by vinograd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "ft_printf.h"
 
 char	*str_redactor(char *arg, register t_flag flags)
 {
 	char	*str;
 	int		len;
 
-	len = ft_strlen(arg);
+	len = ft_strlen_color(arg);
 	if (flags.width != -1 && flags.width < len && flags.spcf != '%')
 	{
 		arg[flags.width] = '\0';
@@ -33,6 +33,25 @@ char	*str_redactor(char *arg, register t_flag flags)
 	return (arg);
 }
 
+int		ft_strlen_color(char *s)
+{
+	size_t	i;
+
+	i = 0;
+	if (s != NULL)
+		while (s[i] != '\0')
+		{
+			if (s[i] == '{')
+			{
+				s += color_redactor(&s[i]);
+				if (!s[i])
+					break ;
+			}
+			i++;
+		}
+	return (i);
+}
+
 int		putstr_for_null_char(char *s)
 {
 	size_t i;
@@ -43,6 +62,25 @@ int		putstr_for_null_char(char *s)
 		{
 			if (s[i] == '@')
 				ft_putchar('^');
+			ft_putchar(s[i++]);
+		}
+	return (i);
+}
+
+int		putstr_color(char *s)
+{
+	size_t i;
+
+	i = 0;
+	if (s != NULL)
+		while (s[i] != '\0')
+		{
+			if (s[i] == '{')
+			{
+				i += color_redactor(&s[i]);
+				if (!s[i])
+					break ;
+			}
 			ft_putchar(s[i++]);
 		}
 	return (i);

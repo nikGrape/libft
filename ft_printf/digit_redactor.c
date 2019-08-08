@@ -6,11 +6,11 @@
 /*   By: vinograd <vinograd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/01 10:40:30 by vinograd          #+#    #+#             */
-/*   Updated: 2019/07/09 18:52:11 by vinograd         ###   ########.fr       */
+/*   Updated: 2019/07/15 11:30:27 by vinograd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "ft_printf.h"
 
 static char	*hashtag_redactor(register int specifier, char *arg, short width)
 {
