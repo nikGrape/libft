@@ -6,7 +6,7 @@
 /*   By: vinograd <vinograd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/19 13:07:55 by vinograd          #+#    #+#             */
-/*   Updated: 2019/07/20 19:03:03 by vinograd         ###   ########.fr       */
+/*   Updated: 2019/08/07 21:21:30 by vinograd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "../libft.h"
 
-typedef struct	s_flags
+typedef struct
 {
 	short			width;
 	unsigned short	length;
@@ -32,7 +32,7 @@ typedef struct	s_flags
 	unsigned char	h_flag;
 	unsigned char	j_flag;
 	unsigned char	z_flag;
-}				t_flag;
+}					t_flag;
 
 t_flag			flag_analazer(const char *s);
 char			*specifier(t_flag *flags, va_list *ap);
