@@ -6,7 +6,7 @@
 /*   By: Nik <Nik@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/03 18:26:04 by vinograd          #+#    #+#             */
-/*   Updated: 2019/08/31 17:08:53 by Nik              ###   ########.fr       */
+/*   Updated: 2019/09/27 15:09:00 by Nik              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,6 +135,7 @@ char			*ft_stradd(char *str, char ch);
 */
 int				get_next_line(const int fd, char **line);
 int				ft_printf(const char *format, ...);
+char			*ft_sprintf(const char *format, ...);
 int				ft_arrayfree(char **arr);
 int				ft_arraylen(char **arr);
 /*
