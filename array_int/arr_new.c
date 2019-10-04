@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   arr_new.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Nik <Nik@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: vinograd <vinograd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/31 14:52:58 by Nik               #+#    #+#             */
-/*   Updated: 2019/08/31 17:18:14 by Nik              ###   ########.fr       */
+/*   Updated: 2019/10/03 21:43:16 by vinograd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,21 @@ int		*arr_new(char *arr)
 		new[i++] = ft_atoi(tmp[j++]);
 	}
 	ft_arrayfree(tmp);
+	return (new);
+}
+
+int		*arr_new2(int i, ...)
+{
+	int		*new;
+	int		len;
+	va_list ap;
+	
+	va_start(ap, i);
+	
+	while (va_arg(ap, (int)))
+	{
+		/* code */
+	}
+	
 	return (new);
 }
