@@ -1,41 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   arr_new.c                                          :+:      :+:    :+:   */
+/*   arr_sort.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Nik <Nik@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/31 14:52:58 by Nik               #+#    #+#             */
-/*   Updated: 2019/10/05 16:35:42 by Nik              ###   ########.fr       */
+/*   Created: 2019/10/05 16:36:38 by Nik               #+#    #+#             */
+/*   Updated: 2019/10/05 16:50:08 by Nik              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "array_int.h"
 
-int		*arr_new(char *arr)
+void	arr_sort(int *arr)
 {
-	int		*new;
-	int		len;
-	char	**tmp;
-	int		i;
-	int		j;
-	
-	tmp = ft_strsplit(arr, ' ');
-	len = ft_arraylen(tmp);
-	new = (int *)malloc(sizeof(int) * (len + 1));
+	int i;
+	int j;
+
 	i = 1;
-	j = 0;
-	new[0] = len;
-	while (tmp[j])
+	while (i <= ARR_LEN)
 	{
-		if (check_arr_input(tmp[j]))
+		j = i;
+		while (j <= ARR_LEN)
 		{
+			if (arr[i] < arr[j])
+				ft_swapi(&arr[i], &arr[j]);
 			j++;
-			new[0]--;
-			continue ;
 		}
-		new[i++] = ft_atoi(tmp[j++]);
+		i++;
 	}
-	ft_arrayfree(tmp);
-	return (new);
+}
+
+void	arr_rsort(int *arr)
+{
+	int i;
+	int j;
+
+	i = 1;
+	while (i <= ARR_LEN)
+	{
+		j = i;
+		while (j <= ARR_LEN)
+		{
+			if (arr[i] > arr[j])
+				ft_swapi(&arr[i], &arr[j]);
+			j++;
+		}
+		i++;
+	}
 }
